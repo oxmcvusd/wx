@@ -227,4 +227,4 @@ if __name__ == '__main__':
                 
                 #send_pic(get_pic())
                 time.sleep(15)
-
+                
