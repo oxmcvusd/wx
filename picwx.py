@@ -19,9 +19,15 @@ def get_token():
     print (j)
     print(j["access_token"])
     return j["access_token"]
+def screen_shot():
+    #from PIL import ImageGrab
+    #im=ImageGrab.grab()
+    pic='C:/222'+".jpg"
+    #im.save(pic)
+    return pic
 
-def get_pic():
-    from PIL import ImageGrab
+def post_pic():
+    #from PIL import ImageGrab
     #im=ImageGrab.grab()
     pic='C:/222'+".jpg"
     #im.save(pic)
@@ -34,7 +40,7 @@ def get_pic():
         #'media':open(pic,'rb')
         }
     print(payload)
-    data={'media':pic}#open(pic,'rb')
+    data={'media':open(pic,'rb')}#
     print(data)
     #r=requests.post(url=img_url,params=payload,files=data)#
     r=requests.post('https://qyapi.weixin.qq.com/cgi-bin/media/upload?access_token='+get_token()+'&type=image',files=data)
@@ -45,24 +51,29 @@ def get_pic():
         print (dicts['media_id'])
         return dicts['media_id']
     
-def send_pic():
+def get_pic():
 
+                        #url="https://qyapi.weixin.qq.com/cgi-bin/media/get?access_token="+get_token()+"&media_id="+post_pic()
+                        #print(url)
                         url="https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token="+get_token()
                         data        = {"touser":"@all",
                                            "toparty":"@all",
                                            "msgtype":"image",
                                            "agentid":"3",
-                                           "image":{"media_id":get_pic()},
+                                           "image": {
+                                               "media_id":post_pic()
+                                                },
                                            "safe":"0"}
+  
                         #data   = json.dumps(dict_arr,ensure_ascii=False,indent=2,sort_keys=True).encode('utf-8')
                         req = requests.post(url,data=json.dumps(data))
                         #读取json数据
                         j = json.loads(req.text)
                         j.keys()
-                        #print (datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S'))
+                        print (datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S'))
                         print(j)
 if __name__ == '__main__':
             while True:
-                        send_pic()
-                        time.sleep(35)
+                        get_pic()
+                        time.sleep(135)
                  
