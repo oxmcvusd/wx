@@ -20,16 +20,17 @@ def get_token():
     print(j["access_token"])
     return j["access_token"]
 def screen_shot():
-    #from PIL import ImageGrab
-    #im=ImageGrab.grab()
-    pic='C:/222'+".jpg"
-    #im.save(pic)
+    from PIL import ImageGrab
+    im=ImageGrab.grab()
+    pic='C:/Users/Administrator/Documents/tbv5321_x64_portable/'+time.strftime('%Y-%m-%d %H-%M-%S')+".jpg"
+    im.save(pic)
+    #pic='C:/222'+".jpg"
     return pic
 
 def post_pic():
     #from PIL import ImageGrab
     #im=ImageGrab.grab()
-    pic='C:/222'+".jpg"
+    #pic='C:/222'+".jpg"
     #im.save(pic)
     
     #img_url='https://api.weixin.qq.com/cgi-bin/material/add_material'
@@ -37,10 +38,10 @@ def post_pic():
     payload={
         'access_token':get_token(),
         'type':'image'#,
-        #'media':open(pic,'rb')
+        #'media':open(screen_shot(),'rb')
         }
     print(payload)
-    data={'media':open(pic,'rb')}#
+    data={'media':open(screen_shot(),'rb')}#
     print(data)
     #r=requests.post(url=img_url,params=payload,files=data)#
     r=requests.post('https://qyapi.weixin.qq.com/cgi-bin/media/upload?access_token='+get_token()+'&type=image',files=data)
