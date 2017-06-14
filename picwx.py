@@ -9,6 +9,7 @@ import time
 import os
 import csv
 
+
 def get_token():
     url='https://qyapi.weixin.qq.com/cgi-bin/gettoken'
     values = {'corpid' :'wx87780fb826353ecc',# 'wx87780fb826353ecc' ,#
@@ -73,8 +74,13 @@ def get_pic():
                         j.keys()
                         print (datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S'))
                         print(j)
+def time_control():
+    current_time=time.localtime(time.time())
+    if((current_time.tm_hour==19) and (current_time.tm_min == 32) and (current_time.tm_sec == 0)):
+        get_pic()
+        
 if __name__ == '__main__':
             while True:
-                        get_pic()
-                        time.sleep(135)
+                    time_control()
+                    time.sleep(1)
                  
