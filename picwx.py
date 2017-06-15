@@ -76,7 +76,21 @@ def get_pic():
                         print(j)
 def time_control():
     current_time=time.localtime(time.time())
-    if((current_time.tm_hour==21 or current_time.tm_hour==23 or current_time.tm_hour==9 or current_time.tm_hour==12 or current_time.tm_hour==15) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+    #if((current_time.tm_hour==21 or current_time.tm_hour==23 or current_time.tm_hour==9 or current_time.tm_hour==12 or current_time.tm_hour==15) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+    if ((current_time.tm_hour==9) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+        get_pic()
+    if ((current_time.tm_hour==12) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+        get_pic()
+    if ((current_time.tm_hour==15) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+        get_pic()
+    if ((current_time.tm_hour==21) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+        get_pic()
+    if ((current_time.tm_hour==23) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+        get_pic()
+    if ((current_time.tm_hour==10) and (current_time.tm_min == 15) and (current_time.tm_sec == 0)):
+        get_pic()
+
+    if ((current_time.tm_hour==10) and (current_time.tm_min == 44) and (current_time.tm_sec == 0)):
         get_pic()
         
 if __name__ == '__main__':
