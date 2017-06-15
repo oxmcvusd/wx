@@ -1,3 +1,38 @@
 打包python为exe：-F 单文件 -W 无命令行
 pyinstaller --version
 pyinstaller -F C:\Users\Administrator\mycode\log.py
+
+pip install requests
+http://www.pyinstaller.org/
+http://download.csdn.net/download/wangxingguo1218/9577487
+
+
+
+
+
+
+
+Microsoft Windows [版本 6.1.7601]
+版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
+
+C:\Users\Administrator>pip list
+future (0.16.0)
+get (0.0.0)
+olefile (0.44)
+Pillow (4.1.0)
+pip (8.1.1)
+post (0.0.0)
+public (0.0.0)
+pyinstaller (3.2.1)
+pypiwin32 (219)
+pywin32 (220)
+query-string (0.0.0)
+request (0.0.0)
+requests (2.13.0)
+setupfiles (0.0.0)
+setuptools (20.10.1)
+You are using pip version 8.1.1, however version 9.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm
+and.
+
+C:\Users\Administrator>
