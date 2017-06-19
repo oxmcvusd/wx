@@ -8,6 +8,7 @@ import datetime
 import time
 import os
 import csv
+from datetime import datetime,date
 
 
 def get_token():
@@ -75,24 +76,28 @@ def get_pic():
                         print (datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S'))
                         print(j)
 def time_control():
+    #from datetime import *
     current_time=time.localtime(time.time())
     #if((current_time.tm_hour==21 or current_time.tm_hour==23 or current_time.tm_hour==9 or current_time.tm_hour==12 or current_time.tm_hour==15) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
-    if ((current_time.tm_hour==9) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
-        get_pic()
-    if ((current_time.tm_hour==12) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
-        get_pic()
-    if ((current_time.tm_hour==15) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
-        get_pic()
-    if ((current_time.tm_hour==21) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
-        get_pic()
-    if ((current_time.tm_hour==23) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
-        get_pic()
-    if ((current_time.tm_hour==10) and (current_time.tm_min == 15) and (current_time.tm_sec == 0)):
-        get_pic()
+    if (datetime.now().weekday() != 5 and datetime.now().weekday() != 6):
+        if ((current_time.tm_hour==9) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+            get_pic()
+        if ((current_time.tm_hour==11) and (current_time.tm_min == 30) and (current_time.tm_sec == 0)):
+            get_pic()
+        if ((current_time.tm_hour==15) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+            get_pic()
+        if ((current_time.tm_hour==21) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+            get_pic()
+        if ((current_time.tm_hour==23) and (current_time.tm_min == 0) and (current_time.tm_sec == 0)):
+            get_pic()
+        if ((current_time.tm_hour==10) and (current_time.tm_min == 15) and (current_time.tm_sec == 0)):
+            get_pic()
 
-    if ((current_time.tm_hour==10) and (current_time.tm_min == 44) and (current_time.tm_sec == 0)):
-        get_pic()
-        
+        if ((current_time.tm_hour==13) and (current_time.tm_min == 30) and (current_time.tm_sec == 0)):
+            get_pic()
+        if ((current_time.tm_hour==14) and (current_time.tm_min == 30) and (current_time.tm_sec == 0)):
+            get_pic()   
+       
 if __name__ == '__main__':
             while True:
                     time_control()
